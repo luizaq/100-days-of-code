@@ -19,17 +19,17 @@ senha=""
 let=[]
 for num in range(0,nr_letters):
   let.append(random.choice(letters))
-print(let)
+
 
 symb=[]
 for num in range(0,nr_symbols):
   symb.append(random.choice(symbols))
-print(symb)
+
 
 numberz=[]
 for num in range(0,nr_numbers):
   numberz.append(random.choice(numbers))
-print(numberz)
+
 
 senhaTemp=[]
 senhaTemp=let+symb+numberz
