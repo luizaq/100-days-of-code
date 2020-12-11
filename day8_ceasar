@@ -1,0 +1,51 @@
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+            'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+            'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+temp_list = []
+encrypted = []
+idx = []
+index_shiftado = []
+decrypted=[]
+def encrypt(text, shift):
+    for char in text:
+        temp_list.append(char)
+    for item in temp_list:
+        it = alphabet.index(item)
+        idx.append(it)
+    for indice in idx:
+        s_t = indice+shift
+        index_shiftado.append(s_t)#numeros + shift
+    for shiftado in index_shiftado:
+        novo_temp = alphabet[shiftado]
+        encrypted.append(novo_temp)
+    converte_lista_e_imprime(encrypted)
+
+def decrypt(text,shift):
+    for char in text:
+        temp_list.append(char)
+    for item in temp_list:
+        it = alphabet.index(item)
+        idx.append(it)
+    for indice in idx:
+        s_t = indice-shift
+        index_shiftado.append(s_t)
+    for shiftado in index_shiftado:
+        novo_temp = alphabet[shiftado]
+        decrypted.append(novo_temp)
+    converte_lista_e_imprime(decrypted)
+def converte_lista_e_imprime(lista):
+    como_string=""
+    for char in lista:
+        como_string+=char
+    print(como_string)
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+if direction == "encode":
+    encrypt(text, shift)
+elif direction == "decode":
+    decrypt(text,shift)
+else:
+    print("error")
