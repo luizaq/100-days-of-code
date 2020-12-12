@@ -1,8 +1,7 @@
 from replit import clear
 import logo
 
-
-bonecos= {}
+bonecos = {}
 continuar = True
 
 print(f"wlcome to the silent auction!\n {logo}")
@@ -11,20 +10,23 @@ while continuar:
     bid = input("Please type your bid: \n")
     int(bid)
     opt = input("more people? type 'yes' or 'no'\n")
-    if opt == "yes":
-        clear()
+    if opt == "y":
+        #clear()
         continuar = True
-    elif opt == "no":
+    elif opt == "n":
         continuar = False
     else:
         print("???")
+        break
     bonecos[name] = bid
 
-vmax = max(bonecos.values())
+lista_keys = list(bonecos.keys())
+lista_values = list(bonecos.values())
 
-for boneco, bid in bonecos.items():
-    if bid == vmax:
-        clear()
-        print(f"The winner is{boneco} with a bid of {bid}")
+
+vmax = max(lista_values)
+kmax = lista_values.index(vmax)
+
+print (f"Ganhador : {lista_keys[kmax] } com o valor : { vmax}")
 
 
