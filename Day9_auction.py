@@ -3,7 +3,6 @@ import logo
 
 bonecos = {}
 continuar = True
-
 print(f"wlcome to the silent auction!\n {logo}")
 while continuar:
     name = input("Please type tour name: \n")
@@ -19,14 +18,8 @@ while continuar:
         print("???")
         break
     bonecos[name] = bid
-
 lista_keys = list(bonecos.keys())
 lista_values = list(bonecos.values())
-
-
 vmax = max(lista_values)
 kmax = lista_values.index(vmax)
-
 print (f"Ganhador : {lista_keys[kmax] } com o valor : { vmax}")
-
-
